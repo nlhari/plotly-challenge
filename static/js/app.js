@@ -1,33 +1,5 @@
 var url = "../../../data/samples.json";
 
-// Fetch the JSON data and console log it
-d3.json(url).then(function(data) {
-    console.log(data);
-  });
-
-  /**
- * Helper function to select metadata 
- * Returns an array of values
- * @param {array} rows
- * @param {integer} index
- * index 0 - id
- * index 1 - ethnicity
- * index 2 - gender
- * index 3 - age
- * index 4 - location
- * index 5 - bbtype
- * index 6 - wfreq
- */
-// function unpack(rows, index) {
-//   return rows.map(function(row) {
-//     return row[index];
-//   });
-// }
-
-function unpackMeta(rows, index) {
-    return rows.map(row => row[index]);
-  }
-
 /***********************************************/
 function optionChanged(newSample) {
     console.log(`Entering ${arguments.callee.name} [ ${newSample}]`)
@@ -43,7 +15,7 @@ function buildMetadata(sample) {
 
     d3.json(url).then(function(data) {
         var metadata = data.metadata.filter(m=> m.id.toString() === sample)[0];
-        console.log(metadata);
+        // console.log(metadata);
 
         var demographic = d3.select('#sample-metadata');
 
@@ -108,7 +80,7 @@ function createBarchart(sample) {
         var otu_10 = sampleData.otu_ids.slice(0,10).reverse();
         var sample_values = sampleData.sample_values.slice(0,10).reverse();
         var otu_id = otu_10.map(d=> "OTU " + d);
-        console.log(otu_id)
+        // console.log(otu_id)
 
 
         var trace1 = {
