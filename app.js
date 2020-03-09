@@ -50,7 +50,8 @@ function createBubbleChart(sample) {
             mode: "markers",
             marker: {
                 color: colors,
-                size: marker_size
+                size: marker_size,
+                colorscale:"Rainbow"
             }
         };
   
@@ -107,7 +108,7 @@ function createBarchart(sample) {
 
 }
 /***********************************************/
-function fillDropDown() {
+function init() {
   // write code to pupulate the dropdown
   console.log(`Entering ${arguments.callee.name}`)
 
@@ -129,4 +130,4 @@ function fillDropDown() {
 }
 /***********************************************/
 
-fillDropDown()
+init()
