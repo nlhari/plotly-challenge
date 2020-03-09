@@ -1,4 +1,4 @@
-var url = "../../../data/samples.json";
+var url = "data/samples.json";
 
 /***********************************************/
 function optionChanged(newSample) {
